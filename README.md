@@ -5,4 +5,4 @@ Learning Rust from the official Rust book
 
 Chapter 2 complete, next on to creating a variant of the guessing game.
 
-I'll make a number and the computer will guess until it is correct.
+Refactoring the ordering match to use functions to make the code a bit cleaner.
