@@ -4,7 +4,6 @@ use std::cmp::Ordering;
 fn main() {
     let mut secret_number = String::new();
     let max_possible_secret = 100;
-    // let min_possible_secret = 1;
     let mut guess = 50;
     let mut last_guess_change_amount = 0;
 
