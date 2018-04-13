@@ -5,8 +5,18 @@ fn main() {
 
     // println!("The guess is {}", guess);
 
-    let a = 0.1;
-    let b = 0.2;
+    // let a = 0.1;
+    // let b = 0.2;
 
-    println!("{}", a + b);
+    // println!("{}", a + b);
+
+    // let my_collection = (1, 'a', "hello world");
+
+    // let (index, alphabet, hello) = my_collection;
+
+    // println!("{} : {} : {}", my_collection.0, my_collection.1, my_collection.2);
+
+    let my_array = [0, 1, 2];
+
+    println!("{}", my_array[5]);
 }
