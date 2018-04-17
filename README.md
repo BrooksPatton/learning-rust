@@ -9,5 +9,5 @@ In Chapter three, created the following projects
 
 Chapter 3: playing with code
 
-* Generate the nth Fibonacci number.
+* [Generate the nth Fibonacci number](https://github.com/BrooksPatton/nth_fibonacci_rust).
 * Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.
