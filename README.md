@@ -8,4 +8,4 @@ In Chapter three, created the following projects
 
 ## Currently at
 
-Chapter 4.1 Variable Scope
+Chapter 4.2 Mutable References
