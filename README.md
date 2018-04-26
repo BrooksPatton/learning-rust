@@ -9,3 +9,9 @@ In Chapter three, created the following projects
 ## Currently at
 
 Chapter 4.2 Mutable References
+
+# Contributors
+
+The following awesome people have helped me improve these examples and make the code better!
+
+* @fschutt
