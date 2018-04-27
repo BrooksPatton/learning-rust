@@ -8,7 +8,7 @@ In Chapter three, created the following projects
 
 ## Currently at
 
-Chapter 4.2 Mutable References
+Chapter 5.1 Using the Field Init Shorthand when Variables and Fields Have the Same Name
 
 # Contributors
 
