@@ -1,0 +1,6 @@
+[package]
+name = "tuple_struct"
+version = "0.1.0"
+authors = ["Brooks Patton <brooks@brookzerker.com>"]
+
+[dependencies]
