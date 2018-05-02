@@ -8,7 +8,7 @@ In Chapter three, created the following projects
 
 ## Currently at
 
-Chapter 5.3 Methods with More Parameters
+Chapter 6.1 The Option Enum and Its Advantages Over Null Values
 
 # Contributors
 
