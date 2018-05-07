@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-Finished chapter 6
+Chapter 7.1 - Rules of Module Filesystems
 
 # Contributors
 
