@@ -19,3 +19,4 @@ Finished chapter 6
 The following awesome people have helped me improve these examples and make the code better!
 
 * @fschutt
+* @aeveris
