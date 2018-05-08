@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-Chapter 7.1 - Rules of Module Filesystems
+Chapter 8.1 - Updating a Vector
 
 # Contributors
 
