@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-Chapter 8.1 - Updating a Vector
+Chapter 8.2 - Appending to a String with push_str and push
 
 # Contributors
 
