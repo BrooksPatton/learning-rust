@@ -12,7 +12,8 @@ At the end of chapter 6
 
 ## Currently at
 
-Chapter 8.3
+* Rust updated to version 1.26
+* Chapter 8.3
 
 # Contributors
 
