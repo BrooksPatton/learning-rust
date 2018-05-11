@@ -17,9 +17,18 @@ fn main() {
     let another_string;
     {
         let mut my_strings = Vec::new();
+        // Here you push only a reference to `my_number` onto the Vec
         my_strings.push(&my_number);
+        // Because of the reference you can just index into the Vec and move the value out of
+        // it, the reference gets copied (immutable references are Copy types).
+        // Try and move the String itself into the Vec, you will get an error that you cannot
+        // move it out of the Vec like this, since it would leave the first element in an invalid
+        // state.
+        // If you want to take elements that do not implement the Copy Trait out of the Vec,
+        // there are methods you can use, e.g. `pop()`, `remove()` or `swap_remove()`.
         another_string = my_strings[0];
-        println!("{}", my_strings.len()); // The length is unchanged, the value at position 0 is no longer valid.
+        // The length is unchanged, since the reference to `my_number` is still in the Vec.
+        println!("{}", my_strings.len());
     }
     println!("{}", another_string);
     
