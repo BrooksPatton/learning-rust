@@ -16,56 +16,44 @@ impl Numbers {
 
     fn median(&mut self) -> f32 {
         self.0.sort();
+        
+        let middle_index = self.0.len() / 2;
 
-        println!("{:?}", self);
+        // Thanks for Aeveris for the suggestion of match and just doing the math here 
+        //  https://gist.github.com/aeveris/521aa7e2d0f006835537d563a932ee7c
+        match self.0.len() % 2 {
+            0 => (self.0[middle_index - 1] + self.0[middle_index]) as f32 / 2.0,
+            _ => self.0[middle_index] as f32
+        }
+    }
 
-        33.0
+    fn mode(&self) -> i32 {
+        let mut numbers = HashMap::new();
+
+        for number in self.0.iter() {
+            numbers.entry(number)
+                .and_modify(|count| {*count += 1})
+                .or_insert(1);
+        }
+
+        let mut result = 0;
+        let mut count = 0;
+
+        numbers.iter().for_each(|(number, total)| {
+            if total > &count {
+                count = *total;
+                result = **number;
+            }
+        });
+
+        result
     }
 }
 
 fn main() {
-    // let list = vec![5, 4, 3, 2, 1];
-    let mut list = Numbers(vec![5, 4, 3, 2, 1]);
+    let mut list = Numbers(vec![5, 4, 3, 2, 1, 99, 33, 67, 67, 12]);
 
-    // println!("The mean of the list is {}", get_mean(&list));
     println!("The mean of the list is {}", list.mean());
     println!("The median of the list is {}", list.median());
-    // println!("The mode of the list is {}", get_mode(&list));
-    // println!("The original vector is {:?}", list);
+    println!("The mode of the list is {}", list.mode());
 }
-
-// fn get_median(list: &Vec<i32>) -> f32 {
-//     let mut sorted_list = list.clone();
-//     let length = sorted_list.len();
-//     let is_odd = length % 2 != 0;
-//     let middle_index = length / 2;
-
-//     sorted_list.sort_unstable();
-
-//     if is_odd {
-//         return sorted_list[middle_index] as f32;
-//     } else {
-//         let middle_two = &sorted_list[middle_index - 1..middle_index + 1];
-//         let mean = get_mean(middle_two);
-//         return mean;
-//     }
-// }
-
-// fn get_mode(list: &[i32]) -> i32 {
-//     let mut numbers = HashMap::new();
-
-//     for number in list.iter() {
-//         let count = numbers.entry(number).or_insert(0);
-//         *count += 1;
-//     }
-
-//     let mut mode = (0, 0);
-//     for (number, count) in numbers.iter() {
-//         if count > &mode.1 {
-//             mode.0 = **number;
-//             mode.1 = *count;
-//         }
-//     }
-
-//     mode.0
-// }
