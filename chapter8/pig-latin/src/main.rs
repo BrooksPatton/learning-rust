@@ -19,17 +19,13 @@ fn pig_latin(str: &str) -> String {
 }
 
 fn convert_to_pig_latin(word: &str) -> String {
-    let mut word = word.to_string();
+    let word = word.to_string();
+    let original_word = word.clone();
     let first_letter = word.get(..1);
     let first_letter = first_letter.unwrap();
     
     match first_letter {
-        "a" | "e" | "i" | "o" | "u" => first_letter.to_string() + &word + "hay",
-        _ => {
-            let result = std::string::String::new();
-            word.push('-');
-            word.push(first_letter.to_ascii_lowercase());
-            word + "ay"
-        }
+        "a" | "e" | "i" | "o" | "u" => original_word + "-hay",
+        _ => original_word.get(1..).unwrap().to_string() + "-" + &first_letter.to_ascii_lowercase() + "ay",
     }
 }
