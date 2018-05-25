@@ -8,7 +8,31 @@
 // Add <name> to <department>
 // Get employees
 // Get employees from <department>
+use std::io;
 
-fn main() {
-    println!("Hello, world!");
+#[derive(Debug)]
+enum Command {
+    add {name: String, department: String},
+    get,
+    get_by_department(String),
+}
+
+fn main() -> io::Result<()> {
+    // ask the user for input
+    println!("{}", "Enter your command: ");
+    let mut raw_input = String::new();
+    io::stdin().read_line(&mut raw_input)?;
+
+    // Get the user command
+    let command_parts: Vec<_> = raw_input.trim().split(' ').collect();
+    let command;
+
+    match command_parts[0] {
+        "add" => command = Command::add {name: command_parts[1].to_string(), department: command_parts[command_parts.len() - 1].to_string()},
+        "get" => println!("nothing here yet"),// get can be two things, having a department or not :),
+        _ => println!("hello")
+    };
+    println!("{:?}", command_parts[0]);
+    // extract parts of the command
+    Ok(())
 }
