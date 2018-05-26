@@ -34,11 +34,13 @@ fn convert_to_pig_latin(word: &str, output_buffer: &mut String) {
             *output_buffer += "-hay";
         },
         _ => {
-            // Below we iterate over the length of the word searching for the end of the first
+            // Below we iterate over the length of the word, searching for the end of the first
             // character in case it spans multiple bytes.
             // Alternatively create an iterator over the chars, skip the first one and then push
             // the remaining chars onto the output string: `word.chars().skip(1).for_each(|c| output_buffer.push(c));`
             for idx in 1..word.len() {
+                // Once we find the character boundary we slice the &str and add everything
+                // except the first character to the output
                 if word.is_char_boundary(idx) {
                     *output_buffer += &word[idx..];
                     break;
