@@ -12,9 +12,9 @@ use std::io;
 
 #[derive(Debug)]
 enum Command {
-    add {name: String, department: String},
-    get,
-    get_by_department(String),
+    Add {name: String, department: String},
+    Get,
+    GetByDepartment(String),
 }
 
 fn main() -> io::Result<()> {
@@ -24,15 +24,27 @@ fn main() -> io::Result<()> {
     io::stdin().read_line(&mut raw_input)?;
 
     // Get the user command
-    let command_parts: Vec<_> = raw_input.trim().split(' ').collect();
+    let command_parts: Vec<_> = raw_input.trim().split(' ').map(|c| c.to_lowercase()).collect();
+    let last_command_part = &command_parts[command_parts.len() - 1];
     let command;
 
-    match command_parts[0] {
-        "add" => command = Command::add {name: command_parts[1].to_string(), department: command_parts[command_parts.len() - 1].to_string()},
-        "get" => println!("nothing here yet"),// get can be two things, having a department or not :),
-        _ => println!("hello")
+    match command_parts[0].as_ref() {
+        "add" => command = Command::Add {name: command_parts[1].to_string(), department: last_command_part.to_string()},
+        "get" => {
+            println!("length of command parts, {}", command_parts.len());
+            if command_parts.len() == 2 || command_parts.len() == 4 {
+                match last_command_part.as_ref() {
+                    "employees" => command = Command::Get,
+                    _ => command = Command::GetByDepartment(last_command_part.to_string()),
+                }
+            } else {
+                panic!("Invalid command");
+            }
+        },
+        _ => panic!()
     };
     println!("{:?}", command_parts[0]);
+    println!("{:?}", command);
     // extract parts of the command
     Ok(())
 }
