@@ -9,6 +9,7 @@
 // Get employees
 // Get employees from <department>
 use std::io;
+use std::collections::HashMap;
 
 #[derive(Debug)]
 enum Command {
@@ -18,33 +19,61 @@ enum Command {
 }
 
 fn main() -> io::Result<()> {
-    // ask the user for input
-    println!("{}", "Enter your command: ");
-    let mut raw_input = String::new();
-    io::stdin().read_line(&mut raw_input)?;
+    let mut departments = HashMap::new();
 
-    // Get the user command
-    let command_parts: Vec<_> = raw_input.trim().split(' ').map(|c| c.to_lowercase()).collect();
-    let last_command_part = &command_parts[command_parts.len() - 1];
-    let command;
+    loop {
+        // ask the user for input
+        println!("{}", "Enter your command: ");
+        let mut raw_input = String::new();
+        io::stdin().read_line(&mut raw_input)?;
 
-    match command_parts[0].as_ref() {
-        "add" => command = Command::Add {name: command_parts[1].to_string(), department: last_command_part.to_string()},
-        "get" => {
-            println!("length of command parts, {}", command_parts.len());
-            if command_parts.len() == 2 || command_parts.len() == 4 {
-                match last_command_part.as_ref() {
-                    "employees" => command = Command::Get,
-                    _ => command = Command::GetByDepartment(last_command_part.to_string()),
+        // Get the user command
+        let command_parts: Vec<_> = raw_input.trim().split(' ').map(|c| c.to_lowercase()).collect();
+        let last_command_part = &command_parts[command_parts.len() - 1];
+        let command;
+
+        match command_parts[0].as_ref() {
+            "add" => command = Command::Add {name: command_parts[1].to_string(), department: last_command_part.to_string()},
+            "get" => {
+                if command_parts.len() == 2 || command_parts.len() == 4 {
+                    match last_command_part.as_ref() {
+                        "employees" => command = Command::Get,
+                        _ => command = Command::GetByDepartment(last_command_part.to_string()),
+                    }
+                } else {
+                    panic!("Invalid command");
                 }
-            } else {
-                panic!("Invalid command");
-            }
-        },
-        _ => panic!()
-    };
-    println!("{:?}", command_parts[0]);
-    println!("{:?}", command);
+            },
+            _ => break
+        };
+        
+        match command {
+            Command::Add{name, department} => {
+                let mut d = departments.entry(department).or_insert(vec![]);
+                d.push(name);
+                },
+            Command::Get => {
+                for (key, val) in departments.iter() {
+                    println!("--- {} ---", key);
+                    for name in val.iter() {
+                        println!("{}", name);
+                    }
+                }
+            },
+            Command::GetByDepartment(department) => {
+                match departments.get(&department) {
+                    Some(names) => {
+                        println!("--- {} ---", department);
+                        for name in names.iter() {
+                            println!("{}", name);
+                        }
+                    },
+                    _ => println!("Department not found")
+                }
+            },
+        };
+    }
+
     // extract parts of the command
     Ok(())
 }
