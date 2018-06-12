@@ -13,8 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 
-* Using a hash map and vectors, create a text interface to allow a user to add employee names to a department in a company. For example, “Add Sally to Engineering” or “Add Amir to Sales.” Then let the user retrieve a list of all people in a department or all people in the company by department, sorted alphabetically.
-* Chapter 9
+* [https://doc.rust-lang.org/book/second-edition/ch09-02-recoverable-errors-with-result.html#matching-on-different-errors](https://doc.rust-lang.org/book/second-edition/ch09-02-recoverable-errors-with-result.html#matching-on-different-errors)
 
 # Contributors
 
