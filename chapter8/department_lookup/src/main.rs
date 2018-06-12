@@ -51,7 +51,7 @@ fn main() -> io::Result<()> {
             Command::Add{name, department} => {
                 let mut d = departments.entry(department).or_insert(vec![]);
                 d.push(name);
-                },
+            },
             Command::Get => {
                 for (key, val) in departments.iter() {
                     println!("--- {} ---", key);
