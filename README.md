@@ -13,7 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 
-* [https://doc.rust-lang.org/book/second-edition/ch09-02-recoverable-errors-with-result.html#propagating-errors](https://doc.rust-lang.org/book/second-edition/ch09-02-recoverable-errors-with-result.html#propagating-errors)
+* [chapter 9.3 - to panic or not to panic](https://doc.rust-lang.org/book/second-edition/ch09-03-to-panic-or-not-to-panic.html)
 
 # Contributors
 
