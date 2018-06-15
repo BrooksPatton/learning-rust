@@ -13,7 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 
-* [chapter 9.3 - to panic or not to panic](https://doc.rust-lang.org/book/second-edition/ch09-03-to-panic-or-not-to-panic.html)
+* [Generic Types, Traits, and Lifetimes](https://doc.rust-lang.org/book/second-edition/ch10-00-generics.html)
 
 # Contributors
 
