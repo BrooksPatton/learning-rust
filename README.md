@@ -13,7 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 
-* [Generic Types, Traits, and Lifetimes](https://doc.rust-lang.org/book/second-edition/ch10-00-generics.html)
+* [Chapter 10 - Validating References with Lifetimes](https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#validating-references-with-lifetimes)
 
 # Contributors
 
