@@ -13,7 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 
-* [Chapter 10 - Validating References with Lifetimes](https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#validating-references-with-lifetimes)
+* [Chapter 10 - Thinking in Terms of Lifetimes](https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#thinking-in-terms-of-lifetimes)
 
 # Contributors
 
