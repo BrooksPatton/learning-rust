@@ -13,7 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 
-* [Chapter 10 - Thinking in Terms of Lifetimes](https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#thinking-in-terms-of-lifetimes)
+* [Chapter 11 - Writing Automated Tests](https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html#writing-automated-tests)
 
 # Contributors
 
