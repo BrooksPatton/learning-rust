@@ -13,7 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 
-* [Chapter 11 - Writing Automated Tests](https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html#writing-automated-tests)
+* [Chapter 11 - Adding Custom Failure Messages](https://doc.rust-lang.org/book/second-edition/ch11-01-writing-tests.html#adding-custom-failure-messages)
 
 # Contributors
 
