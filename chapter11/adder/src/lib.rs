@@ -9,6 +9,14 @@ pub mod shapes {
         pub fn can_hold(&self, other: &Rectangle) -> bool {
             self.length > other.length && self.width > other.width
         }
+
+        pub fn new(length: u32, width: u32) -> Rectangle {
+            if length < 5 && width < 5 {
+                panic!("The rectangle you are creating is too small, make it at least 5x5");
+            }
+
+            Rectangle {length, width}
+        }
     }
 
     #[test]
@@ -26,6 +34,12 @@ pub mod shapes {
         let second = Rectangle {length: 10, width: 10};
         assert_eq!(first, second);
     }
+
+    #[test]
+    #[should_panic(expected="The rectangle you are creating is too small, make it at least 5x5")]
+    fn it_is_not_small() {
+        Rectangle::new(1, 2);
+    }
 }
 
 pub mod adders {
@@ -37,6 +51,18 @@ pub mod adders {
     fn add_two_test() {
         assert_eq!(add_two(2), 4);
         assert_eq!(add_two(4), 6);
+    }
+}
+
+pub mod greeters {
+    pub fn greet(name: &str) -> String {
+        format!("Good morning {}", name)
+    }
+
+    #[test]
+    fn greet_should_use_name() {
+        let result = greet("mrecoelho");
+        assert!(result.contains("mrecoelho"), format!("The name was not correct :(. we got '{}' instead", result));
     }
 }
 
