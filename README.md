@@ -13,7 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 
-* [Chapter 12 - An I/O Project: Building a Command Line Program](https://doc.rust-lang.org/book/second-edition/ch12-00-an-io-project.html#an-io-project-building-a-command-line-program)
+* [Chapter 12 - An I/O Project: Building a Command Line Program](https://doc.rust-lang.org/book/second-edition/ch12-03-improving-error-handling-and-modularity.html#extracting-the-argument-parser)
 
 # Contributors
 
