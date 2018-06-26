@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-
+* Updating the parse function to return a struct and not a tuple, need to run and fix tests
 * [Chapter 12 - An I/O Project: Building a Command Line Program](https://doc.rust-lang.org/book/second-edition/ch12-03-improving-error-handling-and-modularity.html#extracting-the-argument-parser)
 
 # Contributors
