@@ -1,19 +1,20 @@
 extern crate minigrep;
 use std::env;
-use std::fs::File;
-use std::io::prelude::*;
 use minigrep::grep;
+use std::process;
 
-fn main() -> Result<(), String> {
+fn main() {
     let args: Vec<_> = env::args().collect();
-    let config = grep::Config::new(args)?;
-
-    let mut file = File::open(&config.filename).expect("Error opening the file");
-    let mut file_content = String::new();
-    file.read_to_string(&mut file_content).expect("Error reading the file");
-
-    println!("We are searching for {} in {}", config.query, config.filename);
-    println!("The file contents: {}", file_content);
-
-    Ok(())
+    let config = grep::Config::new(args)
+        .unwrap_or_else(|err| {
+            println!("{}", err);
+            process::exit(1);
+        });
+    match grep::run(config) {
+        Ok(text) => println!("{}", text),
+        Err(err) => {
+            println!("{}", err);
+            process::exit(1);
+        }
+    };
 }

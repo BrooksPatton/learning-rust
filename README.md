@@ -13,7 +13,7 @@ At the end of chapter 6
 ## Currently at
 
 * What does a panic! look like from a compiled app
-* [Calling Config::new and Handling Errors](https://doc.rust-lang.org/book/second-edition/ch12-03-improving-error-handling-and-modularity.html#calling-confignew-and-handling-errors)
+* [Extracting Logic from main](https://doc.rust-lang.org/book/second-edition/ch12-03-improving-error-handling-and-modularity.html#extracting-logic-from-main)
 
 # Contributors
 

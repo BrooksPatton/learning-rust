@@ -1,4 +1,7 @@
 pub mod grep {
+  use std::fs::File;
+  use std::io::prelude::*;
+
   pub struct Config {
     pub query: String,
     pub filename: String,
@@ -15,6 +18,22 @@ pub mod grep {
         Err(format!("Not the right amount of arguments, expected 2, got {}", input.len() - 1))
       }
     }
+  }
+
+  pub fn run(config: Config) -> Result<String, String> {
+    let mut file = match File::open(&config.filename) {
+      Ok(file) => file,
+      Err(err) => return Err(String::from("Error opening the file")),
+    };
+
+    let mut file_content = String::new();
+
+    match file.read_to_string(&mut file_content) {
+      Err(err) => return Err(String::from("Error reading the file")),
+      _ => {},
+    };
+
+    Ok(file_content)
   }
 }
 
