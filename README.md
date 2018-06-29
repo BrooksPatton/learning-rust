@@ -12,8 +12,9 @@ At the end of chapter 6
 
 ## Currently at
 
+* Putting the search capabilities into the run function
 * What does a panic! look like from a compiled app
-* [Extracting Logic from main](https://doc.rust-lang.org/book/second-edition/ch12-03-improving-error-handling-and-modularity.html#extracting-logic-from-main)
+* [Extracting Logic from main](https://doc.rust-lang.org/book/second-edition/ch12-04-testing-the-librarys-functionality.html#writing-a-failing-test)
 
 # Contributors
 
