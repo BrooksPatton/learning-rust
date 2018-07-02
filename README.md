@@ -14,7 +14,7 @@ At the end of chapter 6
 
 * Putting the search capabilities into the run function
 * What does a panic! look like from a compiled app
-* [Extracting Logic from main](https://doc.rust-lang.org/book/second-edition/ch12-04-testing-the-librarys-functionality.html#writing-a-failing-test)
+* [Implementing the search_case_insensitive Function](https://doc.rust-lang.org/book/second-edition/ch12-05-working-with-environment-variables.html#implementing-the-search_case_insensitive-function)
 
 # Contributors
 

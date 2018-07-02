@@ -5,14 +5,16 @@ pub mod grep {
   pub struct Config {
     pub query: String,
     pub filename: String,
+    pub case_sensitive: bool,
   }
 
   impl Config {
-    pub fn new(input: Vec<String>) -> Result<Config, String> {
+    pub fn new(input: Vec<String>, case_sensitive: bool) -> Result<Config, String> {
       if input.len() == 3 {
         Ok(Config{
           query: input[1].clone(),
           filename: input[2].clone(),
+          case_sensitive: case_sensitive,
         })
       } else {
         Err(format!("Not the right amount of arguments, expected 2, got {}", input.len() - 1))
@@ -36,10 +38,22 @@ pub mod grep {
     Ok(file_content)
   }
 
-  pub fn search<'a, 'b>(query: &'a str, content: &'b str) -> Vec<&'b str> {
-    let lines: Vec<&str> = content.split("\n").collect();
+  pub fn search_case_insensitive<'a, 'b>(query: &'a str, content: &'b str) -> Vec<&'b str> {
+    let query = query.to_lowercase();
     let mut result: Vec<&str> = Vec::new();
-    for line in lines.iter() {
+
+    for line in content.lines() {
+      if line.to_lowercase().contains(&query) {
+        result.push(line);
+      }
+    }
+
+    result
+  }
+
+  pub fn search_case_sensitive<'a, 'b>(query: &'a str, content: &'b str) -> Vec<&'b str> {
+    let mut result: Vec<&str> = Vec::new();
+    for line in content.lines() {
       if line.contains(query) {
         result.push(line);
       }
@@ -57,7 +71,7 @@ mod tests {
   fn parse_std_in() {
       let std_in: Vec<String> = vec![String::from("hello/world"), String::from("our_query"), String::from("the_filename")];
 
-      let config = grep::Config::new(std_in).unwrap();
+      let config = grep::Config::new(std_in, true).unwrap();
 
       assert_eq!(config.query, "our_query");
       assert_eq!(config.filename, "the_filename");
@@ -66,20 +80,30 @@ mod tests {
   #[test]
   fn config_should_error_when_not_correct_number_of_arguments() {
     let std_in = vec![String::from("hello/world")];
-    match grep::Config::new(std_in) {
+    match grep::Config::new(std_in, true) {
       Err(e) => assert_eq!(e, "Not the right amount of arguments, expected 2, got 0"),
       Ok(_) => panic!("We should not be ok"),
     }
   }
 
   #[test]
-  fn it_should_search() {
+  fn search_case_insensitive() {
     let query = String::from("duct");
     let content = String::from("Rust:
-safe, fast, productive.
+safe, fast, proDuctive.
 Pick three.");
 
-    assert_eq!(grep::search(&query, &content), vec!["safe, fast, productive."]);
+    assert_eq!(grep::search_case_insensitive(&query, &content), vec!["safe, fast, proDuctive."]);
+  }
+
+  #[test]
+  fn search_case_sensitive() {
+    let query = String::from("Duct");
+    let content = String::from("Rust:
+safe, fast, productive.
+Pick three. ProDuctive.");
+
+    assert_eq!(grep::search_case_sensitive(&query, &content), vec!["Pick three. ProDuctive."]);
   }
 
   #[test]
@@ -87,13 +111,13 @@ Pick three.");
     let query = String::from("hi");
     let content = String::from("Hello:
 hi there.
-hi their.");
+Hi their.");
     let result = vec![
       "hi there.",
-      "hi their."
+      "Hi their."
     ];
 
-    assert_eq!(grep::search(&query, &content), result);
+    assert_eq!(grep::search_case_insensitive(&query, &content), result);
   }
 
   #[test]
@@ -104,6 +128,6 @@ hi there.
 hi their.");
     let result: Vec<&str> = vec![];
 
-    assert_eq!(grep::search(&query, &content), result);
+    assert_eq!(grep::search_case_insensitive(&query, &content), result);
   }
 }
