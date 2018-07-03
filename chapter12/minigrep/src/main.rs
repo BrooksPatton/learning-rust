@@ -5,15 +5,17 @@ use std::process;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
-    let config = grep::Config::new(args, false)
+    let case_sensitive_search = env::var("CASE_SENSITIVE").is_err();
+    let config = grep::Config::new(args, case_sensitive_search)
         .unwrap_or_else(|err| {
-            println!("{}", err);
+            eprintln!("{}", err);
             process::exit(1);
         });
+
     match grep::run(config) {
         Ok(text) => println!("{}", text),
         Err(err) => {
-            println!("{}", err);
+            eprintln!("{}", err);
             process::exit(1);
         }
     };

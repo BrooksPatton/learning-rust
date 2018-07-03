@@ -35,7 +35,11 @@ pub mod grep {
       _ => {},
     };
 
-    Ok(file_content)
+    if config.case_sensitive {
+      Ok(search_case_sensitive(&config.query, &file_content).join("\n"))
+    } else {
+      Ok(search_case_insensitive(&config.query, &file_content).join("\n"))
+    }
   }
 
   pub fn search_case_insensitive<'a, 'b>(query: &'a str, content: &'b str) -> Vec<&'b str> {

@@ -12,9 +12,11 @@ At the end of chapter 6
 
 ## Currently at
 
-* Putting the search capabilities into the run function
+* [Functional Language Features: Iterators and Closures](https://doc.rust-lang.org/book/second-edition/ch13-00-functional-features.html)
+
+## Questions to answer
+
 * What does a panic! look like from a compiled app
-* [Implementing the search_case_insensitive Function](https://doc.rust-lang.org/book/second-edition/ch12-05-working-with-environment-variables.html#implementing-the-search_case_insensitive-function)
 
 # Contributors
 
