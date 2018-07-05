@@ -12,7 +12,8 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Functional Language Features: Iterators and Closures](https://doc.rust-lang.org/book/second-edition/ch13-00-functional-features.html)
+* Updating impl to create new instance of Cacher instead of having the code do it
+* [Listing 13-10:](https://doc.rust-lang.org/book/second-edition/ch13-01-closures.html#storing-closures-using-generic-parameters-and-the-fn-traits)
 
 ## Questions to answer
 
