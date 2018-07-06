@@ -12,8 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* Updating impl to create new instance of Cacher instead of having the code do it
-* [Listing 13-10:](https://doc.rust-lang.org/book/second-edition/ch13-01-closures.html#storing-closures-using-generic-parameters-and-the-fn-traits)
+* [Using Iterator Trait Methods Instead of Indexing](https://doc.rust-lang.org/book/second-edition/ch13-03-improving-our-io-project.html#using-iterator-trait-methods-instead-of-indexing)
 
 ## Questions to answer
 
