@@ -4,9 +4,8 @@ use minigrep::grep;
 use std::process;
 
 fn main() {
-    let args: Vec<_> = env::args().collect();
     let case_sensitive_search = env::var("CASE_SENSITIVE").is_err();
-    let config = grep::Config::new(args, case_sensitive_search)
+    let config = grep::Config::new(env::args(), case_sensitive_search)
         .unwrap_or_else(|err| {
             eprintln!("{}", err);
             process::exit(1);
