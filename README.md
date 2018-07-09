@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Using Iterator Trait Methods Instead of Indexing](https://doc.rust-lang.org/book/second-edition/ch13-03-improving-our-io-project.html#using-iterator-trait-methods-instead-of-indexing)
+* [More About Cargo and Crates.io](https://doc.rust-lang.org/book/second-edition/ch14-00-more-about-cargo.html#more-about-cargo-and-cratesio)
 
 ## Questions to answer
 
