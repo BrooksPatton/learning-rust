@@ -1,6 +1,7 @@
 pub mod grep {
   use std::fs::File;
   use std::io::prelude::*;
+  use std::env::Args;
 
   pub struct Config {
     pub query: String,
@@ -9,16 +10,24 @@ pub mod grep {
   }
 
   impl Config {
-    pub fn new(input: Vec<String>, case_sensitive: bool) -> Result<Config, String> {
-      if input.len() == 3 {
-        Ok(Config{
-          query: input[1].clone(),
-          filename: input[2].clone(),
-          case_sensitive: case_sensitive,
-        })
-      } else {
-        Err(format!("Not the right amount of arguments, expected 2, got {}", input.len() - 1))
-      }
+    pub fn new(mut args: Args, case_sensitive: bool) -> Result<Config, String> {
+      args.next();
+      
+      let query = match args.next() {
+        Some(q) => q,
+        None => return Err(String::from("Query option missing")),
+      };
+
+      let filename = match args.next() {
+        Some(f) => f,
+        None => return Err(String::from("Filename option mission")),
+      };
+
+      Ok(Config {
+        query,
+        filename,
+         case_sensitive,
+      })
     }
   }
 
@@ -44,51 +53,22 @@ pub mod grep {
 
   pub fn search_case_insensitive<'a, 'b>(query: &'a str, content: &'b str) -> Vec<&'b str> {
     let query = query.to_lowercase();
-    let mut result: Vec<&str> = Vec::new();
 
-    for line in content.lines() {
-      if line.to_lowercase().contains(&query) {
-        result.push(line);
-      }
-    }
-
-    result
+    content.lines()
+      .filter(|line| line.to_lowercase().contains(&query))
+      .collect()
   }
 
   pub fn search_case_sensitive<'a, 'b>(query: &'a str, content: &'b str) -> Vec<&'b str> {
-    let mut result: Vec<&str> = Vec::new();
-    for line in content.lines() {
-      if line.contains(query) {
-        result.push(line);
-      }
-    }
-
-    result
+    content.lines()
+      .filter(|line| line.contains(query))
+      .collect()
   }
 }
 
 #[cfg(test)]
 mod tests {
   use super::*;
-
-  #[test]
-  fn parse_std_in() {
-      let std_in: Vec<String> = vec![String::from("hello/world"), String::from("our_query"), String::from("the_filename")];
-
-      let config = grep::Config::new(std_in, true).unwrap();
-
-      assert_eq!(config.query, "our_query");
-      assert_eq!(config.filename, "the_filename");
-  }
-
-  #[test]
-  fn config_should_error_when_not_correct_number_of_arguments() {
-    let std_in = vec![String::from("hello/world")];
-    match grep::Config::new(std_in, true) {
-      Err(e) => assert_eq!(e, "Not the right amount of arguments, expected 2, got 0"),
-      Ok(_) => panic!("We should not be ok"),
-    }
-  }
 
   #[test]
   fn search_case_insensitive() {
