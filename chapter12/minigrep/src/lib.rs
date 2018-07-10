@@ -1,3 +1,9 @@
+//!# Minigrep
+//! 
+//! A crate for searching through files
+
+pub use grep::Config;
+
 pub mod grep {
   use std::fs::File;
   use std::io::prelude::*;
@@ -51,6 +57,19 @@ pub mod grep {
     }
   }
 
+  /// # Search case-insensitive
+  /// 
+  /// Allows the caller to search through a string while ignoring case.
+  /// 
+  /// ```
+  ///   let content = String::from("Rust:
+  ///safe, fast, proDuctive.
+  ///Pick three.");
+  /// 
+  ///   let query = String::from("duct");
+  /// 
+  ///   assert_eq!(minigrep::grep::search_case_insensitive(&query, &content), vec!["safe, fast, proDuctive."]);
+  /// ```
   pub fn search_case_insensitive<'a, 'b>(query: &'a str, content: &'b str) -> Vec<&'b str> {
     let query = query.to_lowercase();
 
@@ -70,15 +89,15 @@ pub mod grep {
 mod tests {
   use super::*;
 
-  #[test]
-  fn search_case_insensitive() {
-    let query = String::from("duct");
-    let content = String::from("Rust:
-safe, fast, proDuctive.
-Pick three.");
+  // #[test]
+//   fn search_case_insensitive() {
+//     let query = String::from("duct");
+//     let content = String::from("Rust:
+// safe, fast, proDuctive.
+// Pick three.");
 
-    assert_eq!(grep::search_case_insensitive(&query, &content), vec!["safe, fast, proDuctive."]);
-  }
+//     assert_eq!(grep::search_case_insensitive(&query, &content), vec!["safe, fast, proDuctive."]);
+//   }
 
   #[test]
   fn search_case_sensitive() {
