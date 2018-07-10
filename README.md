@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [More About Cargo and Crates.io](https://doc.rust-lang.org/book/second-edition/ch14-00-more-about-cargo.html#more-about-cargo-and-cratesio)
+* [Creating the Second Crate in the Workspace](https://doc.rust-lang.org/book/second-edition/ch14-03-cargo-workspaces.html#creating-the-second-crate-in-the-workspace)
 
 ## Questions to answer
 
