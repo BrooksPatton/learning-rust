@@ -1,8 +1,6 @@
 [package]
-name = "adder"
+name = "boxes"
 version = "0.1.0"
 authors = ["Brooks Patton <brooks@brookzerker.com>"]
 
 [dependencies]
-add_one = {path = "../add_one"}
-add_two = {path = "../add_two"}

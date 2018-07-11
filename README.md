@@ -12,11 +12,23 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Creating the Second Crate in the Workspace](https://doc.rust-lang.org/book/second-edition/ch14-03-cargo-workspaces.html#creating-the-second-crate-in-the-workspace)
+* [Computing the Size of a Non-Recursive Type](https://doc.rust-lang.org/book/second-edition/ch15-01-box.html#computing-the-size-of-a-non-recursive-type)
 
 ## Questions to answer
 
 * What does a panic! look like from a compiled app
+
+## Documentation fixes for the book
+
+* [chapter 14](https://doc.rust-lang.org/book/second-edition/ch14-03-cargo-workspaces.html)
+
+```Then generate a new library crate named add-one:
+
+$ cargo new add-one
+     Created library `add-one` project
+```
+
+For creating a library, need the lib flag
 
 # Contributors
 
