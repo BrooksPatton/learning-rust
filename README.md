@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Computing the Size of a Non-Recursive Type](https://doc.rust-lang.org/book/second-edition/ch15-01-box.html#computing-the-size-of-a-non-recursive-type)
+* [Implicit Deref Coercions with Functions and Methods](https://doc.rust-lang.org/book/second-edition/ch15-02-deref.html#implicit-deref-coercions-with-functions-and-methods)
 
 ## Questions to answer
 
