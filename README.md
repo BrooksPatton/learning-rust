@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Implicit Deref Coercions with Functions and Methods](https://doc.rust-lang.org/book/second-edition/ch15-02-deref.html#implicit-deref-coercions-with-functions-and-methods)
+* [Dropping a Value Early with std::mem::drop](https://doc.rust-lang.org/book/second-edition/ch15-03-drop.html#dropping-a-value-early-with-stdmemdrop)
 
 ## Questions to answer
 
