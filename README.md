@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Dropping a Value Early with std::mem::drop](https://doc.rust-lang.org/book/second-edition/ch15-03-drop.html#dropping-a-value-early-with-stdmemdrop)
+* [A Use Case for Interior Mutability: Mock Objects](https://doc.rust-lang.org/book/second-edition/ch15-05-interior-mutability.html#a-use-case-for-interior-mutability-mock-objects)
 
 ## Questions to answer
 
