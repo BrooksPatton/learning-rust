@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [A Use Case for Interior Mutability: Mock Objects](https://doc.rust-lang.org/book/second-edition/ch15-05-interior-mutability.html#a-use-case-for-interior-mutability-mock-objects)
+* [Keeping Track of Borrows at Runtime with RefCell<T>](https://doc.rust-lang.org/book/second-edition/ch15-05-interior-mutability.html#keeping-track-of-borrows-at-runtime-with-refcellt)
 
 ## Questions to answer
 
