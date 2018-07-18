@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Keeping Track of Borrows at Runtime with RefCell<T>](https://doc.rust-lang.org/book/second-edition/ch15-05-interior-mutability.html#keeping-track-of-borrows-at-runtime-with-refcellt)
+* [Fearless Concurrency](https://doc.rust-lang.org/book/second-edition/ch16-00-concurrency.html)
 
 ## Questions to answer
 
