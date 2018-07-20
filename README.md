@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Using Message Passing to Transfer Data Between Threads](https://doc.rust-lang.org/book/second-edition/ch16-02-message-passing.html)
+* [Sending Multiple Values and Seeing the Receiver Waiting](https://doc.rust-lang.org/book/second-edition/ch16-02-message-passing.html#sending-multiple-values-and-seeing-the-receiver-waiting)
 
 ## Questions to answer
 
