@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Sending Multiple Values and Seeing the Receiver Waiting](https://doc.rust-lang.org/book/second-edition/ch16-02-message-passing.html#sending-multiple-values-and-seeing-the-receiver-waiting)
+* [Object Oriented Programming Features of Rust](https://doc.rust-lang.org/book/second-edition/ch17-00-oop.html)
 
 ## Questions to answer
 
