@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Adding the approve Method that Changes the Behavior of content](https://doc.rust-lang.org/book/second-edition/ch17-03-oo-design-patterns.html#adding-the-approve-method-that-changes-the-behavior-of-content)
+* [Refutability: Whether a Pattern Might Fail to Match](https://doc.rust-lang.org/book/second-edition/ch18-02-refutability.html)
 
 ## Questions to answer
 
