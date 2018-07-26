@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Refutability: Whether a Pattern Might Fail to Match](https://doc.rust-lang.org/book/second-edition/ch18-02-refutability.html)
+* [Unsafe Rust](https://doc.rust-lang.org/book/second-edition/ch19-01-unsafe-rust.html)
 
 ## Questions to answer
 
