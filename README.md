@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Unsafe Rust](https://doc.rust-lang.org/book/second-edition/ch19-01-unsafe-rust.html)
+* [Using extern Functions to Call External Code](https://doc.rust-lang.org/book/second-edition/ch19-01-unsafe-rust.html#using-extern-functions-to-call-external-code)
 
 ## Questions to answer
 
