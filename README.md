@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Using extern Functions to Call External Code](https://doc.rust-lang.org/book/second-edition/ch19-01-unsafe-rust.html#using-extern-functions-to-call-external-code)
+* [Advanced Traits](https://doc.rust-lang.org/book/2018-edition/ch19-03-advanced-traits.html)
 
 ## Questions to answer
 
