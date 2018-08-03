@@ -1,4 +1,10 @@
+extern "C" {
+    fn abs(input: i32) -> i32;
+}
+
 use std::slice;
+
+static mut COUNTER: u32 = 0;
 
 fn main() {
     let mut num = 5;
@@ -16,6 +22,15 @@ fn main() {
     let mut numbers = vec![1,2,3,4,5,6,7];
     let (a, b) = split_at_mut(&mut numbers, 4);
     println!("a: {:?}, b: {:?}", a, b);
+
+    unsafe {
+        println!("abs of -3 according to C: {}", abs(-3));
+    }
+
+    update_counter(1);
+    unsafe {
+        println!("The counter now is: {}", COUNTER);
+    }
 }
 
 fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
@@ -28,4 +43,10 @@ fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
         slice::from_raw_parts_mut(pointer, mid),
         slice::from_raw_parts_mut(pointer.offset(mid as isize), size - mid),
     )}
+}
+
+fn update_counter(increase_by: u32) {
+    unsafe {
+        COUNTER += increase_by;
+    }
 }
