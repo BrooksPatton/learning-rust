@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Advanced Traits](https://doc.rust-lang.org/book/2018-edition/ch19-03-advanced-traits.html)
+* [Final Project: Building a Multithreaded Web Server](https://doc.rust-lang.org/book/2018-edition/ch20-00-final-project-a-web-server.html#final-project-building-a-multithreaded-web-server)
 
 ## Questions to answer
 
