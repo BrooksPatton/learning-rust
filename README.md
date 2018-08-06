@@ -30,6 +30,12 @@ $ cargo new add-one
 
 For creating a library, need the lib flag
 
+* [chapter 19](https://doc.rust-lang.org/book/2018-edition/ch19-03-advanced-traits.html#using-the-newtype-pattern-to-implement-external-traits-on-external-types)
+
+In Chapter 10 in the “Implementing a Trait on a Type” section, we mentioned the orphan rule that states we’re allowed to implement a trait on a type as long as either the trait or the type are local to our crate.
+
+**we're** -> were
+
 # Contributors
 
 The following awesome people have helped me improve these examples and make the code better!
