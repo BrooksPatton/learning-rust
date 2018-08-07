@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Final Project: Building a Multithreaded Web Server](https://doc.rust-lang.org/book/2018-edition/ch20-00-final-project-a-web-server.html#final-project-building-a-multithreaded-web-server)
+* [Validating the Request and Selectively Responding](https://doc.rust-lang.org/book/2018-edition/ch20-01-single-threaded.html#validating-the-request-and-selectively-responding)
 
 ## Questions to answer
 
