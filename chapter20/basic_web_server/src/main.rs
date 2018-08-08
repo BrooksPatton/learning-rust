@@ -2,6 +2,8 @@ use std::net::TcpListener;
 use std::net::TcpStream;
 use std::io::prelude::*;
 use std::fs;
+use std::thread;
+use std::time::Duration;
 
 fn main() {
     let address = "127.0.0.1:3000";
@@ -10,18 +12,37 @@ fn main() {
     for stream in listener.incoming() {
         let stream = stream.unwrap();
 
-        handle_connection(stream);
+        thread::spawn(|| handle_connection(stream));
     }
 }
 
 fn handle_connection(mut stream: TcpStream) {
+    let file_name;
+    let mut status = 200;
+    let mut status_text = "ok";
     let mut buffer = [0; 1024];
 
     stream.read(&mut buffer).unwrap();
 
-    let index_html = fs::read_to_string("index.html").unwrap();
-    let response = format!("HTTP/1.1 200 OK\r\n\r\n{}", index_html);
-    stream.write(response.as_bytes()).unwrap();
+    if buffer.starts_with(path("/").as_bytes()) {
+        file_name = "index.html";
+    }
+    else if buffer.starts_with(path("/sleep").as_bytes()) {
+        thread::sleep(Duration::from_secs(10));
+        file_name = "sleep.html"
+    } else {
+        status = 404;
+        status_text = "not found";
+        file_name = "404.html";
+    }
 
-    println!("The incomming stream:\n\n{}", String::from_utf8_lossy(&buffer[..]));
+    let html = fs::read_to_string(file_name).unwrap();
+    let response = format!("HTTP/1.1 {} {}\r\n\r\n{}", status, status_text, html);
+    stream.write(response.as_bytes()).unwrap();
+    stream.flush().unwrap();
+    println!("request:\n{}", String::from_utf8_lossy(&buffer));
+}
+
+fn path(location: &str) -> String {
+    format!("GET {} HTTP/1.1\r\n", location)
 }
