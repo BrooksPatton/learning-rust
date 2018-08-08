@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Validating the Request and Selectively Responding](https://doc.rust-lang.org/book/2018-edition/ch20-01-single-threaded.html#validating-the-request-and-selectively-responding)
+* [Creating a Similar Interface for a Finite Number of Threads](https://doc.rust-lang.org/book/2018-edition/ch20-02-multithreaded.html#creating-a-similar-interface-for-a-finite-number-of-threads)
 
 ## Questions to answer
 
