@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* [Creating a Similar Interface for a Finite Number of Threads](https://doc.rust-lang.org/book/2018-edition/ch20-02-multithreaded.html#creating-a-similar-interface-for-a-finite-number-of-threads)
+* [A Worker Struct Responsible for Sending Code from the ThreadPool to a Thread](https://doc.rust-lang.org/book/2018-edition/ch20-02-multithreaded.html#a-worker-struct-responsible-for-sending-code-from-the-threadpool-to-a-thread)
 
 ## Questions to answer
 
