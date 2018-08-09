@@ -1,18 +1,22 @@
+extern crate basic_web_server;
+
 use std::net::TcpListener;
 use std::net::TcpStream;
 use std::io::prelude::*;
 use std::fs;
-use std::thread;
 use std::time::Duration;
+use basic_web_server::ThreadPool;
+use std::thread;
 
 fn main() {
     let address = "127.0.0.1:3000";
     let listener = TcpListener::bind(address).unwrap();
+    let thread_pool = ThreadPool::new(4);
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
 
-        thread::spawn(|| handle_connection(stream));
+        thread_pool.execute(|| handle_connection(stream));
     }
 }
 
