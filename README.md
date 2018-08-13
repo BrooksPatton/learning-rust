@@ -12,7 +12,7 @@ At the end of chapter 6
 
 ## Currently at
 
-* just text [Listing 20-21: Adding a new trait FnBox to work around the current limitations of Box<dyn FnOnce()>](https://doc.rust-lang.org/book/2018-edition/ch20-02-multithreaded.html#a-worker-struct-responsible-for-sending-code-from-the-threadpool-to-a-thread)
+* Finished the book
 
 ## Questions to answer
 
