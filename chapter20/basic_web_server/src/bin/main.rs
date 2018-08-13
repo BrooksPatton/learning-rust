@@ -13,7 +13,7 @@ fn main() {
     let listener = TcpListener::bind(address).unwrap();
     let thread_pool = ThreadPool::new(4);
 
-    for stream in listener.incoming().take(2) {
+    for stream in listener.incoming() {
         let stream = stream.unwrap();
 
         thread_pool.execute(|| handle_connection(stream));
