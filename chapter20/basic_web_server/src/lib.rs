@@ -24,12 +24,13 @@ impl ThreadPool {
   pub fn new(total_threads: usize) -> ThreadPool {
     assert!(total_threads > 0);
 
-    let mut workers = Vec::with_capacity(total_threads);
     let (sender, receiver) = mpsc::channel();
     let receiver = Arc::new(Mutex::new(receiver));
+    let mut workers = Vec::with_capacity(total_threads);
 
     for id in 0..total_threads {
-      workers[id] = Worker::new(id, Arc::clone(&receiver));
+      // workers[id] = Worker::new(id, Arc::clone(&receiver));
+      workers.push(Worker::new(id, Arc::clone(&receiver)));
     }
 
     ThreadPool {
